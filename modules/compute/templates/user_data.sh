@@ -333,42 +333,6 @@ systemctl start matrix-synapse-docker.service
 echo "INFO: Setting up Nginx..."
 apt-get install -y nginx
 
-# Create /var/www/html if it doesn't exist (it should from Certbot section, but good to be sure)
-mkdir -p /var/www/html
-
-# Create a simple index.html for the root
-echo "INFO: Creating /var/www/html/index.html..."
-cat <<'EOF' > /var/www/html/index.html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Matrix Server</title>
-    <style>
-        body {
-            background-color: black;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            color: white; /* Fallback for text visibility */
-        }
-        img {
-            max-width: 90%;
-            max-height: 90%;
-            display: block; /* Helps with centering if parent is flex */
-            margin: auto; /* Also helps with centering */
-        }
-    </style>
-</head>
-<body>
-    <img src="https://raw.githubusercontent.com/mauvehed/tf-matrix-synapse/refs/heads/main/modules/compute/static/logo-sm.png" alt="Server Logo">
-</body>
-</html>
-EOF
-
 # Configure Nginx for Matrix Synapse
 # Remove default site
 rm -f /etc/nginx/sites-enabled/default
@@ -419,14 +383,6 @@ server {
     add_header X-Frame-Options DENY;
     add_header X-XSS-Protection "1; mode=block";
     # add_header Content-Security-Policy "default-src 'none'; frame-ancestors 'none';"; # Too restrictive for web clients
-
-    # Serve the static index page at the root
-    location = / {
-        root /var/www/html;
-        index index.html;
-        # Optional: Add caching headers for the static page if desired
-        # expires 1h;
-    }
 
     location / {
         proxy_pass http://127.0.0.1:8008;
