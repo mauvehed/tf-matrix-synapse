@@ -1,0 +1,44 @@
+# Hetzner Cloud API token (sensitive)
+hcloud_token = "your-hetzner-cloud-api-token"
+
+# Cloudflare API token (sensitive)
+cloudflare_api_token = "your-cloudflare-api-token"
+
+# Cloudflare Zone ID for the domain
+cloudflare_zone_id = "your-cloudflare-zone-id"
+
+# Domain name for the Matrix server (e.g., example.com)
+domain = "example.com"
+
+# Matrix server name (e.g., matrix.example.com)
+server_name = "matrix.example.com"
+
+# Hetzner Cloud location (e.g., nbg1, fsn1, hel1, ash)
+location = "ash"
+
+# Hetzner Cloud server type for Matrix server (e.g., cpx11, cpx21)
+server_type = "cpx11"
+
+# Hetzner Cloud server type for PostgreSQL server (e.g., cpx11, cpx21)
+database_server_type = "cpx11"
+
+# List of SSH key IDs to add to the servers (e.g., ["12345"])
+ssh_keys = ["your-ssh-key-id"]
+
+# PostgreSQL database password (sensitive)
+postgres_password = "generate-a-strong-password"
+
+# Shared secret for Matrix registration (sensitive)
+synapse_registration_shared_secret = "generate-a-strong-secret"
+
+# Secret key for Matrix macaroons (sensitive)
+synapse_macaroon_secret_key = "YOUR_SYNAPSE_MACAROON_SECRET_KEY"
+
+# Number of days to retain backups
+backup_retention_days = 7
+
+# Environment name (e.g., prod, dev)
+environment = "prod"
+
+# Certbot email
+certbot_email = "your-email@example.com"

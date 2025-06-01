@@ -1,0 +1,32 @@
+# Hetzner Cloud API Token
+# hcloud_token = "your_hcloud_token"
+
+# Cloudflare API Token and Zone ID
+# cloudflare_api_token = "your_cloudflare_api_token"
+# cloudflare_zone_id must be configured if not using domain data lookup
+
+# Domain and Server Configuration
+# domain     = "example.com"
+# server_name = "matrix.example.com"
+# matrix_client_url = "https://matrix.example.com"
+
+# SSH Keys (Name of the key in Hetzner Cloud)
+# ssh_keys = ["your_ssh_key_name"]
+
+# PostgreSQL Configuration
+# postgres_password = "generate_a_strong_password"
+
+# Synapse Configuration
+# synapse_registration_shared_secret = "generate_a_strong_secret"
+# synapse_macaroon_secret_key    = "generate_a_strong_secret"
+
+# Backup Configuration
+# backup_retention_days = 7
+
+# Server Configuration (Optional - Defaults exist in modules/compute/variables.tf and modules/database/variables.tf)
+# location = "nbg1" # Example: nbg1 (Nuremberg), fsn1 (Falkenstein), hel1 (Helsinki), ash (Ashburn)
+# server_type = "cpx11" # Example: cpx11 (2 vCPU, 2 GB RAM)
+# database_server_type = "cpx11" # Example: cpx11 (2 vCPU, 2 GB RAM)
+
+# Environment (prod or dev, affects some resource naming)
+# environment = "prod"
